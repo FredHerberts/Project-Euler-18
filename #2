@@ -1,1 +1,16 @@
+import numpy
+import time
+start = time.time()
 
+
+
+for x in range(0,14):
+    for y in range(x,14):
+        if triangle[x,y] > triangle[x,y+1]:
+            triangle[x+1,y+1] = triangle[x+1,y+1] + triangle[x,y]
+        else:
+            triangle[x+1,y+1] = triangle[x+1,y+1] + triangle[x,y+1]
+
+print(triangle)
+end = time.time()
+print(end - start)
