@@ -1,7 +1,6 @@
 import numpy
 import time
 start = time.time()
-
 triangle = numpy.array([[4, 62, 98, 27, 23, 9, 70, 98, 73, 93, 38, 53, 60, 4, 23],
                         [0, 63, 66, 4, 68, 89, 53, 67, 30, 73, 16, 69, 87, 40, 31],
                         [0, 0, 91, 71, 52, 38, 17, 14, 91, 43, 58, 50, 27, 29, 48],
@@ -18,13 +17,15 @@ triangle = numpy.array([[4, 62, 98, 27, 23, 9, 70, 98, 73, 93, 38, 53, 60, 4, 23
                         [0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 95, 64],
                         [0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 75]])
 
-for x in range(0,14):
-    for y in range(x,14):
-        if triangle[x,y] > triangle[x,y+1]:
-            triangle[x+1,y+1] = triangle[x+1,y+1] + triangle[x,y]
-        else:
-            triangle[x+1,y+1] = triangle[x+1,y+1] + triangle[x,y+1]
+def Maximum_path_sum_I(q):
+    for x in range(0,q):
+        for y in range(x, 14):
+            if triangle[x, y] > triangle[x, y + 1]:
+                triangle[x + 1, y + 1] = triangle[x + 1, y + 1] + triangle[x, y]
+            else:
+                triangle[x + 1, y + 1] = triangle[x + 1, y + 1] + triangle[x, y + 1]
+    print(triangle)
 
-print(triangle)
+Maximum_path_sum_I(14)
 end = time.time()
 print(end - start)
