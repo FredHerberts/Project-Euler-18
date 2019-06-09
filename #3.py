@@ -20,10 +20,10 @@ triangle = numpy.array([[4, 62, 98, 27, 23, 9, 70, 98, 73, 93, 38, 53, 60, 4, 23
 def Maximum_path_sum_I(q):
     for x in range(0,q):
         for y in range(x, 14):
-            if triangle[x, y] > triangle[x, y + 1]:
-                triangle[x + 1, y + 1] = triangle[x + 1, y + 1] + triangle[x, y]
+            if triangle[x,y] > triangle[x,y+1]:
+                triangle[x+1,y+1] = triangle[x+1,y+1]+triangle[x,y]
             else:
-                triangle[x + 1, y + 1] = triangle[x + 1, y + 1] + triangle[x, y + 1]
+                triangle[x+1,y+1]=triangle[x+1,y+1]+triangle[x,y+1]
     print(triangle[q,q])
 
 Maximum_path_sum_I(14)
