@@ -24,7 +24,7 @@ def Maximum_path_sum_I(q):
                 triangle[x + 1, y + 1] = triangle[x + 1, y + 1] + triangle[x, y]
             else:
                 triangle[x + 1, y + 1] = triangle[x + 1, y + 1] + triangle[x, y + 1]
-    print(triangle)
+    print(triangle[q,q])
 
 Maximum_path_sum_I(14)
 end = time.time()
