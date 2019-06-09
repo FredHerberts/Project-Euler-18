@@ -17,11 +17,11 @@ triangle = numpy.array([[4,62,98,27,23, 9,70,98,73,93,38,53,60, 4,23],
                          [0,0,0,0,0,0,0,0,0,0,0,0,0,0,75]])
 
 for x in range(0,14):
-    for y in range(0,14):
-        if triangle[y,x] > triangle[y+1,x]:
-            triangle[x+1] = triangle[x+1] + triangle[y]
+    for y in range(0,13):
+        if triangle[x,y] > triangle[x,y+1]:
+            triangle[x+1,y] = triangle[x+1,y] + triangle[x,y]
         else:
-            triangle[x+1] = triangle[x+1] + triangle[y+1]
+            triangle[x+1,y] = triangle[x+1,y] + triangle[y+1,y]
             
 
 
