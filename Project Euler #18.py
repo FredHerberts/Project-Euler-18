@@ -21,9 +21,9 @@ def Maximum_path_sum_I(q):
     for x in range(0,q):
         for y in range(x,q):
             if triangle[x,y] > triangle[x,y+1]:
-                triangle[x+1,y+1] = triangle[x+1,y+1]+triangle[x,y]
+                triangle[x+1,y+1] += triangle[x,y]
             else:
-                triangle[x+1,y+1]=triangle[x+1,y+1]+triangle[x,y+1]
+                triangle[x+1,y+1] += triangle[x,y+1]
     print(triangle[q,q])
 
 Maximum_path_sum_I(14)
